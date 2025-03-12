@@ -12,11 +12,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { useCart } from "@/hooks/useCart";
 import { useWishlist } from "@/hooks/usewishlist";
 import axios from "axios";
-import {
-  HomeIcon,
-  ShoppingBagIcon,
-  HeartIcon,
-} from "@heroicons/react/24/solid";
 
 type UserMenuState = boolean;
 type SearchBoxState = boolean;
@@ -86,7 +81,7 @@ export default function Icons() {
     if (!value.trim()) return;
 
     try {
-      const response = await axios.get(
+      const response = await axios.get<Product[]>(
         `http://localhost:5000/api/products/search?q=${value}`
       );
       setSearchResults(response.data);

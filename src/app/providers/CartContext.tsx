@@ -8,6 +8,10 @@ interface CartContextProps {
   addToCart: (count: number) => void;
 }
 
+interface CartResponse {
+  totalCount: number;
+}
+
 const CartContext = createContext<CartContextProps | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
@@ -18,9 +22,12 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
       try {
         const token = localStorage.getItem("token");
         if (token) {
-          const response = await axios.get("http://localhost:5000/api/cart", {
-            headers: { Authorization: `Bearer ${token}` },
-          });
+          const response = await axios.get<CartResponse>(
+            "http://localhost:5000/api/cart",
+            {
+              headers: { Authorization: `Bearer ${token}` },
+            }
+          );
           setCartCount(response.data.totalCount);
         }
       } catch (err) {
