@@ -10,6 +10,24 @@ import Stepper from "../slider/stepper";
 import Loading from "@/app/loading";
 import Link from "next/link";
 
+interface Product {
+  _id: string;
+  name: string;
+  price: number;
+  images: string[];
+}
+
+interface Variant {
+  color: string;
+  size: string;
+}
+
+interface CartItem {
+  product: Product;
+  variant: Variant;
+  quantity: number;
+}
+
 const toPersianDigits = (num: number | string) =>
   num.toString().replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[+d]);
 
@@ -107,7 +125,7 @@ export default function BasketComp() {
       </div>
     );
 
-  const totalPrice = cart.items.reduce((total, item) => {
+  const totalPrice = cart.items.reduce((total: number, item: CartItem) => {
     if (item.product && item.product.price) {
       return total + item.product.price * item.quantity;
     }
@@ -172,7 +190,7 @@ export default function BasketComp() {
 
           <div className="w-2/3 pl-8">
             <div className="space-y-8">
-              {cart.items.map((item: any) => (
+              {cart.items.map((item: CartItem) => (
                 <div
                   key={`${item.product?._id}-${item.variant?.color}-${item.variant?.size}`}
                   className="flex justify-between items-center bg-white rounded-lg shadow-md p-4 transition-transform transform hover:scale-105"

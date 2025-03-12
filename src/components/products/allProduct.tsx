@@ -166,7 +166,7 @@ export default function AllProduct() {
           {rows.map((row, rowIndex) => (
             <div key={rowIndex} className="flex justify-center gap-8 mb-8">
               {row.map((item) => (
-                <Link key={product._id} href={`/products/${product.slug}`}>
+                <Link key={item._id} href={`/products/${item.slug}`}>
                   <div className="rounded-[12px] w-[14rem] h-[21rem] bg-gradient-to-br from-[#f0f0f0] to-[#cacaca] shadow-[7px_7px_14px_#5a5a5a,-7px_-7px_14px_#ffffff] flex flex-col relative group">
                     {item.images.length > 0 ? (
                       <Image

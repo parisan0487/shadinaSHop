@@ -32,12 +32,10 @@ export default function AdminPage() {
         if (res.ok && data.role === "admin") {
           setUser(data);
         } else {
-          setUser(false);
           router.replace("/");
         }
       } catch (error) {
         console.error("خطا در دریافت اطلاعات کاربر:", error);
-        setUser(false);
         router.replace("/");
       }
     };

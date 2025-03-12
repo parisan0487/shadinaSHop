@@ -54,7 +54,7 @@ export default function ContactUs() {
             />
             <textarea
               placeholder="پیام شما"
-              rows="4"
+              rows={4}
               className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-end"
             ></textarea>
             <button className="bg-purple-600 text-white p-3 rounded-lg hover:bg-purple-700 transition font-bold ">

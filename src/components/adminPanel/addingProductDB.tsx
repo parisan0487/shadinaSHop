@@ -471,7 +471,7 @@ const AddProductsToDB = () => {
         ...product,
       }));
 
-      const response = await axios.post(
+      await axios.post(
         "http://localhost:5000/api/products/add-multiple",
         { products: productsToSend },
         {
@@ -481,7 +481,7 @@ const AddProductsToDB = () => {
         }
       );
 
-      setStatus(response.data.message);
+      setStatus("اضافه شد");
     } catch (error: any) {
       console.error(
         "خطا در افزودن محصولات:",
@@ -493,16 +493,14 @@ const AddProductsToDB = () => {
 
   const deleteAllProducts = async () => {
     try {
-      const response = await axios.delete(
-        "http://localhost:5000/api/products/delete-all"
-      );
-      alert(response.data.message); // نمایش پیام موفقیت
-    } catch (error) {
+      await axios.delete("http://localhost:5000/api/products/delete-all");
+      alert("پاک شد");
+    } catch (error: any) {
       console.error(
         "خطا در حذف تمام محصولات:",
         error.response ? error.response.data : error.message
       );
-      alert("خطا در حذف محصولات!");
+      alert("خطا در حذف محصولات");
     }
   };
 

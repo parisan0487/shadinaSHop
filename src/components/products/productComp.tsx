@@ -30,6 +30,7 @@ interface Product {
   stock: number;
   images: string[];
   variants: Variant[];
+  producter?: string;
 }
 
 const colorMap: Record<string, string> = {

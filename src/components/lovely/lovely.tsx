@@ -11,6 +11,8 @@ import NavHead from "../layout/heading/navHead";
 
 interface Product {
   _id: string;
+  id: string;
+  slug: string;
   name: string;
   price: number;
   images: string[];
