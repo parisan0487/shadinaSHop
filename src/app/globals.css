@@ -19,3 +19,12 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@font-face {
+  font-family: "Gandom";
+  src: url("../../public/fonts/Gandom.eot"),
+    url("../../public/fonts/Gandom.woff") format("woff"),
+    url("../../public/fonts/Gandom.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
