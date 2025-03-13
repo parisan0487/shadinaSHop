@@ -1523,3 +1523,24 @@
     margin-left: 300px;
   }
 }
+
+@media (max-width: 470px) {
+  #starTop {
+    margin-left: 280px;
+  }
+  #starButton {
+    margin-left: 280px;
+  }
+}
+
+@media (max-width: 430px) {
+  #starTop {
+    margin-left: 250px;
+  }
+  #starButton {
+    margin-left: 250px;
+  }
+  #offerSlider {
+    margin-left: 35px;
+  }
+}

@@ -46,7 +46,7 @@ export default function Offer() {
       effect="coverflow"
       grabCursor={true}
       centeredSlides={true}
-      slidesPerView={3}
+      slidesPerView={2}
       autoplay={{ delay: 3000, disableOnInteraction: false }}
       loop={true}
       spaceBetween={20}
@@ -58,6 +58,7 @@ export default function Offer() {
         slideShadows: false,
       }}
       className="w-[90%] overflow-hidden"
+      is="offerSlider"
     >
       {products.map((product) => (
         <SwiperSlide
