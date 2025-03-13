@@ -1490,9 +1490,36 @@
 
 @media (max-width: 540px) {
   #starTop {
-    margin-left: 365px;
+    margin-left: 350px;
   }
   #starButton {
-    margin-left: 365px;
+    margin-left: 350px;
+  }
+}
+
+@media (max-width: 521px) {
+  #starTop {
+    margin-left: 330px;
+  }
+  #starButton {
+    margin-left: 330px;
+  }
+}
+
+@media (max-width: 495px) {
+  #starTop {
+    margin-left: 315px;
+  }
+  #starButton {
+    margin-left: 315px;
+  }
+}
+
+@media (max-width: 485px) {
+  #starTop {
+    margin-left: 300px;
+  }
+  #starButton {
+    margin-left: 300px;
   }
 }

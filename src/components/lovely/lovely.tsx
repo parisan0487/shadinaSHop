@@ -36,7 +36,7 @@ export default function LovelyComp() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["wishlist"] });
-      toast.success("محصول با موفقیت حذف شد!");
+      toast.success("محصول با موفقیت حذف شد");
     },
     onError: (error: any) => {
       toast.error(error.response?.data?.message || "مشکلی رخ داده است");
@@ -73,7 +73,7 @@ export default function LovelyComp() {
         <div className="flex justify-center items-center mt-20">
           <div className="w-2/3 pl-8 ">
             <div className="space-y-8 ">
-              {wishlist.products.map((product: Product) => (
+              {(wishlist?.products ?? []).map((product: Product) => (
                 <motion.div
                   key={product._id}
                   className="flex justify-between items-center bg-white rounded-lg shadow-md p-4 transition-transform transform hover:scale-105"
