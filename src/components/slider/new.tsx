@@ -48,6 +48,22 @@ export default function New() {
         autoplay={{ delay: 3000 }}
         loop={true}
         spaceBetween={50}
+        breakpoints={{
+          268: { slidesPerView: 1, spaceBetween: 90 },
+          370: { slidesPerView: 2, spaceBetween: 230 },
+          472: { slidesPerView: 2, spaceBetween: 185 },
+          490: { slidesPerView: 2, spaceBetween: 160 },
+          530: { slidesPerView: 2, spaceBetween: 115 },
+          575: { slidesPerView: 2, spaceBetween: 55 },
+          650: { slidesPerView: 2, spaceBetween: 5 },
+          700: { slidesPerView: 3, spaceBetween: 200 },
+          820: { slidesPerView: 3, spaceBetween: 60 },
+          890: { slidesPerView: 3, spaceBetween: 20 },
+          940: { slidesPerView: 3, spaceBetween: -100 },
+          1060: { slidesPerView: 4, spaceBetween: 10 },
+          1230: { slidesPerView: 5, spaceBetween: 90 },
+          1310: { slidesPerView: 5, spaceBetween: 30 },
+        }}
         className="relative -z-10"
         id="swiper-new"
       >

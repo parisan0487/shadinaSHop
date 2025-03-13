@@ -1565,3 +1565,48 @@
     margin-left: 35px;
   }
 }
+
+@media (max-width: 415px) {
+  #starTop {
+    margin-left: 225px;
+  }
+  #starButton {
+    margin-left: 225px;
+  }
+}
+
+@media (max-width: 405px) {
+  #starTop {
+    margin-left: 215px;
+  }
+  #starButton {
+    margin-left: 215px;
+  }
+}
+
+@media (max-width: 395px) {
+  #starTop {
+    margin-left: 205px;
+  }
+  #starButton {
+    margin-left: 205px;
+  }
+}
+
+@media (max-width: 383px) {
+  #starTop {
+    margin-left: 195px;
+  }
+  #starButton {
+    margin-left: 195px;
+  }
+}
+
+@media (max-width: 375px) {
+  #starTop {
+    margin-left: 185px;
+  }
+  #starButton {
+    margin-left: 185px;
+  }
+}
