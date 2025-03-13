@@ -29,9 +29,6 @@ export default function Offer() {
         const response = await fetch(
           "http://89.42.199.11:5000/api/products/category/offer"
         );
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
         const data = await response.json();
         console.log("محصولات دریافت‌شده:", data);
         setProducts(data);
