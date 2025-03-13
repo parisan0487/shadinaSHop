@@ -42,23 +42,31 @@ export default function Offer() {
 
   return (
     <Swiper
-      modules={[EffectCoverflow, Autoplay]}
+      modules={[Autoplay]}
+      slidesPerView={3}
       effect="coverflow"
       grabCursor={true}
-      centeredSlides={true}
-      slidesPerView={3}
-      autoplay={{ delay: 3000, disableOnInteraction: false }}
+      autoplay={{ delay: 3000 }}
       loop={true}
-      spaceBetween={20}
-      coverflowEffect={{
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: false,
+      spaceBetween={50}
+      breakpoints={{
+        368: { slidesPerView: 2, spaceBetween: 270 },
+        375: { slidesPerView: 1, spaceBetween: 110 },
+        412: { slidesPerView: 2, spaceBetween: 230 },
+        // 490: { slidesPerView: 2, spaceBetween: 160 },
+        // 530: { slidesPerView: 2, spaceBetween: 115 },
+        575: { slidesPerView: 2, spaceBetween: 55 },
+        650: { slidesPerView: 2, spaceBetween: 5 },
+        700: { slidesPerView: 3, spaceBetween: 200 },
+        820: { slidesPerView: 3, spaceBetween: 60 },
+        890: { slidesPerView: 3, spaceBetween: 20 },
+        940: { slidesPerView: 3, spaceBetween: -100 },
+        1060: { slidesPerView: 3, spaceBetween: 10 },
+        1230: { slidesPerView: 3, spaceBetween: 90 },
+        1310: { slidesPerView: 3, spaceBetween: 30 },
       }}
       className="w-[90%] overflow-hidden"
-      id="offerSlider"
+      id="swiper-offer"
     >
       {products.map((product) => (
         <SwiperSlide

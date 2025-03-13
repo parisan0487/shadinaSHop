@@ -5,16 +5,14 @@ import Head from "next/head";
 
 export default function Home() {
   return (
-    <>
+    <div>
       <Head>
         <title>shadinaShop</title>
         <meta name="description" content="پوشاک بچه گانه شادینا" />
       </Head>
-      <div>
-        <HeaderComp />
-        <BodyComp />
-        <Footer />
-      </div>
-    </>
+      <HeaderComp />
+      <BodyComp />
+      <Footer />
+    </div>
   );
 }

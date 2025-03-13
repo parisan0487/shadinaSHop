@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
+import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/effect-fade";
@@ -16,7 +17,13 @@ const images = [
 
 export default function SimpleImageSwiper() {
   return (
-    <div className="w-full pl-28 -z-10 " id="clothesSlider">
+    <motion.div
+      initial={{ opacity: 0, x: 100 }} // شروع از سمت راست
+      animate={{ opacity: 1, x: 0 }} // ورود به موقعیت اصلی
+      transition={{ duration: 1.2, ease: "easeOut" }}
+      className="w-full pl-28 -z-10"
+      id="clothesSlider"
+    >
       <Swiper
         modules={[Autoplay, EffectFade]}
         spaceBetween={10}
@@ -40,6 +47,6 @@ export default function SimpleImageSwiper() {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </motion.div>
   );
 }

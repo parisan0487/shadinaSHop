@@ -1,6 +1,9 @@
+"use client";
+
 import SimpleImageSwiper from "../../slider/sliderHed";
 import Link from "next/link";
 import NavHead from "@/components/layout/heading/navHead";
+import { motion } from "framer-motion";
 
 const HeaderComp = () => {
   return (
@@ -25,26 +28,46 @@ const HeaderComp = () => {
         <div className="relative w-1/2">
           <SimpleImageSwiper />
         </div>
-        <div className="w-1/2 pr-10 text-right" id="text">
-          <h1
+        <motion.div
+          className="w-1/2 pr-10 text-right"
+          id="text"
+          initial={{ opacity: 0, x: -100, zIndex: -1 }}
+          animate={{ opacity: 1, x: 0, zIndex: 50 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          <motion.h1
             className="text-4xl font-extrabold text-purple-800 opacity-90"
             id="textH1"
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 90 }}
+            transition={{ duration: 1, delay: 0.2 }}
           >
             !باشادینا شیک به نظر برسید
-          </h1>
-          <p className="mt-4 opacity-90 font-bold" id="textP">
+          </motion.h1>
+
+          <motion.p
+            className="mt-4 opacity-90 font-bold "
+            id="textP"
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 90 }}
+            transition={{ duration: 1, delay: 0.4 }}
+          >
             پوشاک با کیفیت، راحت و شیک برای کوچولوها با بهترین قیمت‌ها و طرح‌های
             جذاب
-          </p>
+          </motion.p>
+
           <Link href="/shop">
-            <button
-              className="mt-6 bg-purple-500 text-black hover:text-purple-500 px-6 py-3 rounded-full hover:bg-black transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl active:scale-95"
+            <motion.button
+              className="mt-6 bg-purple-500 opacity-90 text-black hover:text-purple-500 px-6 py-3 rounded-full hover:bg-black transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl active:scale-95"
               id="textButton"
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 90 }}
+              transition={{ duration: 1, delay: 0.4 }}
             >
               مشاهده محصولات
-            </button>
+            </motion.button>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </header>
   );
