@@ -46,7 +46,7 @@ export default function Offer() {
       effect="coverflow"
       grabCursor={true}
       centeredSlides={true}
-      slidesPerView={2}
+      slidesPerView={3}
       autoplay={{ delay: 3000, disableOnInteraction: false }}
       loop={true}
       spaceBetween={20}
