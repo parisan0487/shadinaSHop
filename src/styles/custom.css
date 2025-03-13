@@ -1276,6 +1276,12 @@
   #starButton {
     margin-left: 555px;
   }
+  #offer {
+    margin-left: -4px;
+  }
+  #offerSlider {
+    width: 100%;
+  }
 }
 
 @media (max-width: 716px) {
@@ -1522,6 +1528,9 @@
   #starButton {
     margin-left: 300px;
   }
+  #offer {
+    margin-left: -23px;
+  }
 }
 
 @media (max-width: 470px) {
@@ -1533,12 +1542,24 @@
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 450px) {
   #starTop {
-    margin-left: 250px;
+    margin-left: 265px;
   }
   #starButton {
-    margin-left: 250px;
+    margin-left: 265px;
+  }
+  #offer {
+    margin-left: -75px;
+  }
+}
+
+@media (max-width: 435px) {
+  #starTop {
+    margin-left: 240px;
+  }
+  #starButton {
+    margin-left: 240px;
   }
   #offerSlider {
     margin-left: 35px;

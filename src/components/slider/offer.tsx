@@ -58,7 +58,7 @@ export default function Offer() {
         slideShadows: false,
       }}
       className="w-[90%] overflow-hidden"
-      is="offerSlider"
+      id="offerSlider"
     >
       {products.map((product) => (
         <SwiperSlide
