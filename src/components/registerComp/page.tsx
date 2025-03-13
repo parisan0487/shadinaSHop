@@ -39,8 +39,8 @@ export default function RegisterComp() {
 
     try {
       const endpoint = isLogin
-        ? "http://localhost:5000/api/users/login"
-        : "http://localhost:5000/api/users/register";
+        ? "http://89.42.199.11:5000/api/users/login"
+        : "http://89.42.199.11:5000/api/users/register";
 
       const res = await axios.post(endpoint, userData, {
         headers: { "Content-Type": "application/json" },

@@ -10,8 +10,8 @@ const updateCartRequest = async ({ productId, action }: UpdateCartParams) => {
   const token = localStorage.getItem("token");
   const url =
     action === "add"
-      ? "http://localhost:5000/api/cart/add"
-      : "http://localhost:5000/api/cart/remove";
+      ? "http://89.42.199.11:5000/api/cart/add"
+      : "http://89.42.199.11:5000/api/cart/remove";
   const method = "POST";
 
   const { data } = await axios({

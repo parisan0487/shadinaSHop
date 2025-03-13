@@ -7,7 +7,7 @@ const fetchCart = async () => {
     throw new Error("No token found");
   }
 
-  const { data } = await axios.get("http://localhost:5000/api/cart", {
+  const { data } = await axios.get("http://89.42.199.11:5000/api/cart", {
     headers: { Authorization: `Bearer ${token}` },
   });
 

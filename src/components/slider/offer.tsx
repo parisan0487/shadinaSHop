@@ -27,7 +27,7 @@ export default function Offer() {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/products/category/offer"
+          "http://89.42.199.11:5000/api/products/category/offer"
         );
         const data = await response.json();
         console.log("محصولات دریافت‌شده:", data);

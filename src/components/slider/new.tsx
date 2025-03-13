@@ -28,7 +28,7 @@ export default function New() {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/products/category/new"
+          "http://89.42.199.11:5000/api/products/category/new"
         );
         const data = await response.json();
         setProducts(data);

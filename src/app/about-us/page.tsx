@@ -8,7 +8,6 @@ export default function AboutUs() {
         <NavHead bgColor="bg-gradient-to-br from-[#fefeff] via-[#f7d1ff] to-[#f8f9ff] backdrop-blur-[10px]" />
       </div>
       <div className="bg-gray-100 text-gray-900 min-h-screen p-6 flex flex-col items-center font-gandom">
-        {/* هدر */}
         <div className="text-center mt-10">
           <h1 className="text-5xl font-extrabold text-purple-700 mb-6">
             درباره شادینا
@@ -20,7 +19,6 @@ export default function AboutUs() {
           </p>
         </div>
 
-        {/* معرفی برند */}
         <div className="mt-16 max-w-4xl text-center p-6 bg-white shadow-lg rounded-2xl">
           <h2 className="text-3xl font-bold text-purple-600 mb-4">
             چرا شادینا؟

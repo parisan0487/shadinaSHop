@@ -71,7 +71,7 @@ export default function AllProduct() {
 
   useEffect(() => {
     axios
-      .get<Product[]>(`http://localhost:5000/api/products`)
+      .get<Product[]>(`http://89.42.199.11:5000/api/products`)
       .then((response) => {
         setProduct(response.data);
         setFilteredProducts(response.data);

@@ -33,7 +33,7 @@ export default function ProfileComp() {
         }
 
         const response = await axios.get<User>(
-          "http://localhost:5000/api/users/",
+          "http://89.42.199.11:5000/api/users/",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -63,7 +63,7 @@ export default function ProfileComp() {
       }
 
       const response = await axios.put(
-        "http://localhost:5000/api/users/update",
+        "http://89.42.199.11:5000/api/users/update",
         { name: editName, phone: editPhone },
         {
           headers: { Authorization: `Bearer ${token}` },

@@ -1468,3 +1468,31 @@
     margin-left: 390px;
   }
 }
+
+@media (max-width: 545px) {
+  #starTop {
+    margin-left: 380px;
+  }
+  #starButton {
+    margin-left: 380px;
+  }
+  #imagePro {
+    height: 162px;
+  }
+  #widthPro {
+    width: 140px;
+    height: 275px;
+  }
+  #hightDad {
+    height: 25rem;
+  }
+}
+
+@media (max-width: 540px) {
+  #starTop {
+    margin-left: 365px;
+  }
+  #starButton {
+    margin-left: 365px;
+  }
+}

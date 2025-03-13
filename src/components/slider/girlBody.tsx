@@ -28,7 +28,7 @@ export default function GirlBody() {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/products/category/girlBody"
+          "http://89.42.199.11:5000/api/products/category/girlBody"
         );
         const data = await response.json();
         setProducts(data);

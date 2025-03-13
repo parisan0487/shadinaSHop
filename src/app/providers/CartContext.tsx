@@ -23,7 +23,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         const token = localStorage.getItem("token");
         if (token) {
           const response = await axios.get<CartResponse>(
-            "http://localhost:5000/api/cart",
+            "http://89.42.199.11:5000/api/cart",
             {
               headers: { Authorization: `Bearer ${token}` },
             }

@@ -63,7 +63,7 @@ export default function BasketComp() {
 
       if (action === "remove" && quantity === 1) {
         await axios.delete(
-          `http://localhost:5000/api/cart/remove/${productId}?color=${color}&size=${size}`,
+          `http://89.42.199.11:5000/api/cart/remove/${productId}?color=${color}&size=${size}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -73,14 +73,14 @@ export default function BasketComp() {
 
         if (updatedQuantity === 0) {
           await axios.delete(
-            `http://localhost:5000/api/cart/remove/${productId}?color=${color}&size=${size}`,
+            `http://89.42.199.11:5000/api/cart/remove/${productId}?color=${color}&size=${size}`,
             {
               headers: { Authorization: `Bearer ${token}` },
             }
           );
         } else {
           await axios.post(
-            `http://localhost:5000/api/cart/add`,
+            `http://89.42.199.11:5000/api/cart/add`,
             {
               productId,
               quantity: action === "add" ? 1 : -1,

@@ -18,7 +18,7 @@ export default function AdminPage() {
       }
 
       try {
-        const res = await fetch("http://localhost:5000/api/users/admin", {
+        const res = await fetch("http://89.42.199.11:5000/api/users/admin", {
           headers: { Authorization: `Bearer ${token}` },
         });
 

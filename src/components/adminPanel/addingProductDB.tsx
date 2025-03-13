@@ -472,7 +472,7 @@ const AddProductsToDB = () => {
       }));
 
       await axios.post(
-        "http://localhost:5000/api/products/add-multiple",
+        "http://89.42.199.11:5000/api/products/add-multiple",
         { products: productsToSend },
         {
           headers: {
@@ -493,7 +493,7 @@ const AddProductsToDB = () => {
 
   const deleteAllProducts = async () => {
     try {
-      await axios.delete("http://localhost:5000/api/products/delete-all");
+      await axios.delete("http://89.42.199.11:5000/api/products/delete-all");
       alert("پاک شد");
     } catch (error: any) {
       console.error(
