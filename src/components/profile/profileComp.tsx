@@ -32,12 +32,9 @@ export default function ProfileComp() {
           return;
         }
 
-        const response = await axios.get<User>(
-          "http://89.42.199.11:5000/api/users/",
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        );
+        const response = await axios.get<User>("/api/users/", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
 
         setUser(response.data);
       } catch (error) {
@@ -63,7 +60,7 @@ export default function ProfileComp() {
       }
 
       const response = await axios.put(
-        "http://89.42.199.11:5000/api/users/update",
+        "/api/users/update",
         { name: editName, phone: editPhone },
         {
           headers: { Authorization: `Bearer ${token}` },

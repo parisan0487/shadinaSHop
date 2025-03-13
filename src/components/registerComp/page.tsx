@@ -38,9 +38,7 @@ export default function RegisterComp() {
     const userData = isLogin ? { phone, password } : { name, phone, password };
 
     try {
-      const endpoint = isLogin
-        ? "http://89.42.199.11:5000/api/users/login"
-        : "http://89.42.199.11:5000/api/users/register";
+      const endpoint = isLogin ? "/api/users/login" : "/api/users/register";
 
       const res = await axios.post(endpoint, userData, {
         headers: { "Content-Type": "application/json" },

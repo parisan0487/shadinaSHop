@@ -7,6 +7,14 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "http://89.42.199.11:5000/:path*",
+      },
+    ];
+  },
 };
 
 export default nextConfig;

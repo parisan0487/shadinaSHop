@@ -85,7 +85,7 @@ export default function ProductComp() {
         if (typeof params.id === "string") {
           const [id, slug] = params.id.split("-");
           console.log("Fetching product with id:", id, "and slug:", slug);
-          const url = `http://89.42.199.11:5000/api/products/${params.id}`;
+          const url = `/api/products/${params.id}`;
           const response = await axios.get(url);
           if (response.status === 200) {
             setProduct(response.data);
@@ -144,7 +144,7 @@ export default function ProductComp() {
       }
 
       const response = await axios.post(
-        "http://89.42.199.11:5000/api/cart/add",
+        "/api/cart/add",
         {
           productId: product._id,
           quantity: 1,
@@ -177,7 +177,7 @@ export default function ProductComp() {
       }
 
       const response = await axios.post(
-        "http://89.42.199.11:5000/api/wishlist/add",
+        "/api/wishlist/add",
         { productId: product._id },
         { headers: { Authorization: `Bearer ${token}` } }
       );

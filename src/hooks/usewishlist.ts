@@ -4,7 +4,7 @@ import axios from "axios";
 const fetchWishlist = async () => {
   const token = localStorage.getItem("token");
   if (!token) return { items: [] };
-  const { data } = await axios.get("http://89.42.199.11:5000/api/wishlist", {
+  const { data } = await axios.get("/api/wishlist", {
     headers: { Authorization: `Bearer ${token}` },
   });
   return data;

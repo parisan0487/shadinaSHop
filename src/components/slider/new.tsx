@@ -27,9 +27,7 @@ export default function New() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(
-          "http://89.42.199.11:5000/api/products/category/new"
-        );
+        const response = await fetch("/api/products/category/new");
         const data = await response.json();
         setProducts(data);
       } catch (error) {

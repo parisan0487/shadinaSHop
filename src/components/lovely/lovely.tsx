@@ -29,12 +29,9 @@ export default function LovelyComp() {
   const removeWishlistMutation = useMutation({
     mutationFn: async (productId: string) => {
       const token = localStorage.getItem("token");
-      await axios.delete(
-        `http://89.42.199.11:5000/api/wishlist/remove/${productId}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
+      await axios.delete(`/api/wishlist/remove/${productId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       return productId;
     },
     onSuccess: () => {

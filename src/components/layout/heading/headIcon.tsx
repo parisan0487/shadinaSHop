@@ -82,7 +82,7 @@ export default function Icons() {
 
     try {
       const response = await axios.get<Product[]>(
-        `http://89.42.199.11:5000/api/products/search?q=${value}`
+        `/api/products/search?q=${value}`
       );
       setSearchResults(response.data);
       setIsModalOpen(true);

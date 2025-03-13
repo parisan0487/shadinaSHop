@@ -14,11 +14,7 @@ const updateWishlist = async ({ productId }: UpdateCartParams) => {
     },
   };
 
-  const { data } = await axios.post(
-    "http://89.42.199.11:5000/api/wishlist/add",
-    { productId },
-    config
-  );
+  const { data } = await axios.post("/api/wishlist/add", { productId }, config);
   return data;
 };
 
