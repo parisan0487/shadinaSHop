@@ -49,6 +49,7 @@ export default function BoyBody() {
         loop={true}
         spaceBetween={50}
         className="relative -z-10"
+        id="swiper-boy"
       >
         {products.map((product) => (
           <SwiperSlide key={product._id}>

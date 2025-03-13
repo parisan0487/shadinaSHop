@@ -28,3 +28,10 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
+#swiper-girl,
+#swiper-boy,
+#swiper-best,
+#swiper-new {
+  overflow: visible !important;
+}

@@ -27,9 +27,7 @@ export default function GirlBody() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(
-          "/api/products/category/girlBody"
-        );
+        const response = await fetch("/api/products/category/girlBody");
         const data = await response.json();
         setProducts(data);
       } catch (error) {
@@ -51,6 +49,7 @@ export default function GirlBody() {
         loop={true}
         spaceBetween={50}
         className="relative -z-10"
+        id="swiper-girl"
       >
         {products.map((product) => (
           <SwiperSlide key={product._id}>
