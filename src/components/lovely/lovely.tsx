@@ -48,7 +48,7 @@ export default function LovelyComp() {
     return (
       <p className="text-center text-xl text-red-500">خطا در دریافت سبد خرید</p>
     );
-  if (!wishlist || wishlist.products?.length === 0) {
+  if (!wishlist || !wishlist.products || wishlist.products.length === 0) {
     return (
       <div className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-md flex items-center justify-center z-50 animate-fade-in">
         <div className="bg-gradient-to-r from-purple-600 via-purple-500 to-purple-400 p-8 rounded-3xl shadow-2xl w-[30rem] text-center">
