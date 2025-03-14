@@ -1,5 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
+const fadeInFromLeft = {
+  hidden: { x: -50, opacity: 0 },
+  visible: (i: number) => ({
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.8, delay: i * 0.2, ease: "easeOut" },
+  }),
+};
 
 export default function FooterComp() {
   return (
@@ -7,12 +19,28 @@ export default function FooterComp() {
       <div className="relative w-full h-auto p-10 bg-purple-300 overflow-hidden font-gandom">
         <div className="absolute top-[-150px] left-[-200px] w-[500px] h-[500px] bg-gradient-to-br from-[#f3e8ff] via-[#f7d1ff] to-[#f8f9ff] rounded-full opacity-40"></div>
         <div className="absolute bottom-[-150px] right-[-200px] w-[500px] h-[500px] bg-gradient-to-br from-[#f3e8ff] via-[#f7d1ff] to-[#f8f9ff] rounded-full opacity-40"></div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-20 text-right">
-          <div>{/* نماد */}</div>
 
-          <div>
+        {/* شبکه بندی فوتر */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-20 text-right">
+          <motion.div
+            variants={fadeInFromLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={0} // اولین ستون
+          >
+            {/* نماد */}
+          </motion.div>
+
+          <motion.div
+            variants={fadeInFromLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={1} // دومین ستون
+          >
             <h3 className="text-lg font-semibold mb-3">دسته‌بندی‌ها</h3>
-            <ul className="space-y-2  mt-[30px]">
+            <ul className="space-y-2 mt-[30px]">
               <li>
                 <Link href="/boy">
                   <span className="hover:text-gray-700 font-bold">پسرانه</span>
@@ -24,9 +52,15 @@ export default function FooterComp() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            variants={fadeInFromLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={2} // سومین ستون
+          >
             <h3 className="text-lg font-semibold mb-3">لینک‌های مفید</h3>
             <ul className="space-y-2 mt-[30px]">
               <li>
@@ -51,9 +85,15 @@ export default function FooterComp() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            variants={fadeInFromLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={3} // چهارمین ستون
+          >
             <h2 className="font-bold text-xl opacity-90 mb-4 mr-[17px]">
               ارتباط با شادینا
             </h2>
@@ -97,7 +137,7 @@ export default function FooterComp() {
                 className="opacity-90 m-3"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
