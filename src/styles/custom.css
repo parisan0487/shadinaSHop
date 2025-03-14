@@ -1863,7 +1863,7 @@
 }
 
 @media (max-width: 465px) {
-  #icon {
+  #icon-pro {
     margin-left: 2px;
   }
 }
@@ -1890,7 +1890,7 @@
     height: 100%;
   }
 
-  #icon {
+  #icon-pro {
     width: 100%;
     height: 100%;
     margin-left: 1px;
@@ -1909,7 +1909,7 @@
 }
 
 @media (max-width: 388px) {
-  #icon {
+  #icon-pro {
     margin-top: 0px;
   }
 }
