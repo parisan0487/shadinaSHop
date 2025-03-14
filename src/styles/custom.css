@@ -1843,3 +1843,73 @@
     margin-bottom: 65px;
   }
 }
+
+/* foor product */
+
+@media (max-width: 767px) {
+  #guid-pro {
+    margin-top: 0px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 494px) {
+  #marginTop {
+    display: none;
+  }
+  #image-pro {
+    height: 23rem;
+  }
+}
+
+@media (max-width: 465px) {
+  #icon {
+    margin-left: 2px;
+  }
+}
+
+@media (max-width: 444px) {
+  #smaller-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  #guid-pro {
+    display: flex;
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+
+  #icon-container {
+    width: 33%;
+    height: 100%;
+  }
+
+  #icon {
+    width: 100%;
+    height: 100%;
+    margin-left: 1px;
+  }
+
+  #button-text {
+    width: 67%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6b21a8;
+    color: white;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 388px) {
+  #icon {
+    margin-top: 0px;
+  }
+}

@@ -8,7 +8,7 @@ import Footer from "@/components/layout/footer/footerComp";
 import { HeartIcon } from "@heroicons/react/24/outline";
 import { queryClient } from "@/app/providers/queryClient";
 import New from "../slider/new";
-import Loading from "@/app/products/[id]/loading";
+import Loading from "@/app/loading";
 import NavHead from "../layout/heading/navHead";
 
 const toPersianDigits = (num: number | string) => {
@@ -226,7 +226,7 @@ export default function ProductComp() {
       <div className="p-10 bg-gray-100 overflow-hidden">
         <NavHead bgColor="bg-gradient-to-br from-[#f3e8ff] via-[#f7d1ff] to-[#f8f9ff] backdrop-blur-[10px]" />
 
-        <div className="h-20 w-full"></div>
+        <div className="h-20 w-full" id="marginTop"></div>
 
         <div className="text-end p-6 rounded-2xl bg-gray-100 shadow-[inset_8px_8px_16px_#bebebe,inset_-8px_-8px_16px_#ffffff,8px_8px_16px_rgba(0,0,0,0.1),-8px_-8px_16px_rgba(255,255,255,0.7)] relative overflow-visible flex flex-col md:flex-row font-gandom">
           <div className="md:w-1/2 md:pr-10 mt-10 md:mt-0">
@@ -237,18 +237,22 @@ export default function ProductComp() {
               onClick={addToLovely}
             />
 
-            <div className="flex gap-[490px]">
-              <p className=" font-bold text-xl mt-4" dir="rtl">
-                {product.producter}
-              </p>
-              <p className="font-semibold mt-4">:تولید</p>
-            </div>
-
-            <div className="flex gap-[420px]">
-              <p className="text-purple-700 font-bold text-xl mt-4" dir="rtl">
-                {toPersianDigits(product.price)} تومان
-              </p>
-              <p className="font-semibold mt-4">:قیمت</p>
+            <div
+              className="flex flex-wrap justify-between gap-4"
+              id="price-pro"
+            >
+              <div className="flex flex-col items-end">
+                <p className="font-bold text-xl mt-4" dir="rtl">
+                  {product.producter}
+                </p>
+                <p className="text-purple-700 font-bold text-xl mt-4" dir="rtl">
+                  {toPersianDigits(product.price)} تومان
+                </p>
+              </div>
+              <div className="flex flex-col items-start">
+                <p className="font-semibold mt-4">:تولید</p>
+                <p className="font-semibold mt-4">:قیمت</p>
+              </div>
             </div>
 
             {/* بخش انتخاب رنگ */}
@@ -308,6 +312,7 @@ export default function ProductComp() {
             <button
               onClick={addToCart}
               disabled={isOutOfStock}
+              id="smaller-button"
               className={`mt-10 bg-purple-700 text-white px-6 py-3 rounded-lg hover:bg-purple-800 transition-all shadow-md disabled:bg-gray-400 ${
                 isOutOfStock
                   ? "opacity-50 cursor-not-allowed"
@@ -355,18 +360,23 @@ export default function ProductComp() {
             )}
             <button
               className="flex w-32 h-14 rounded-lg shadow-md overflow-hidden mt-16"
+              id="guid-pro"
               onClick={() => setIsOpenSize(true)}
             >
-              <div className="w-1/2 h-full">
+              <div className="w-1/2 h-full" id="icon-container">
                 <Image
                   src="/img/size.png"
                   alt="Icon"
                   width={40}
                   height={40}
                   className="w-full h-full object-cover"
+                  id="icon"
                 />
               </div>
-              <span className="w-1/2 h-full flex items-center justify-center bg-purple-800 text-white text-sm">
+              <span
+                className="w-1/2 h-full flex items-center justify-center bg-purple-800 text-white text-sm"
+                id="button-text"
+              >
                 راهنمای انتخاب سایز
               </span>
             </button>
@@ -409,6 +419,7 @@ export default function ProductComp() {
                 width={400}
                 height={0}
                 className="rounded-lg shadow-md h-[28rem]"
+                id="image-pro"
               />
             </div>
 
