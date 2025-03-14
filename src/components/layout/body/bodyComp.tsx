@@ -11,6 +11,7 @@ import New from "../../slider/new";
 import GirlBody from "../../slider/girlBody";
 import Best from "../../slider/best";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 export default function BodyComp() {
   const [isVisible1, setIsVisible1] = useState(false);
@@ -113,6 +114,15 @@ export default function BodyComp() {
           <Offer />
         </div>
       </motion.div>
+      <div>
+        <Image
+          src="/img/ball.png"
+          alt="Shopping"
+          width={100}
+          height={100}
+          className="relative smooth-entry opacity-90 mr-52 mb-[-9rem] cursor-pointer transition-all duration-200 transform hover:scale-110"
+        />
+      </div>
 
       <div className="mt-32">
         <p
@@ -130,13 +140,23 @@ export default function BodyComp() {
           transition={{
             duration: 0.8,
             ease: "easeOut",
-            delay: isVisible5 ? 0 : 0.9,
+            delay: isVisible5 ? 0 : 2,
           }}
           className="mt-32"
         >
           <New />
         </motion.div>
       </div>
+
+      {/* <div>
+        <Image
+          src="/img/ball.png"
+          alt="Shopping"
+          width={100}
+          height={100}
+          className="relative smooth-entry opacity-90 ml-[71rem] mb-[-9rem] cursor-pointer transition-all duration-200 transform hover:scale-110"
+        />
+      </div> */}
 
       <div className="mt-32">
         <p
@@ -154,7 +174,7 @@ export default function BodyComp() {
           transition={{
             duration: 0.8,
             ease: "easeOut",
-            delay: isVisible6 ? 0 : 0.9,
+            delay: isVisible6 ? 0 : 2,
           }}
           className="mt-32"
         >
@@ -178,7 +198,7 @@ export default function BodyComp() {
           transition={{
             duration: 0.8,
             ease: "easeOut",
-            delay: isVisible7 ? 0 : 0.9,
+            delay: isVisible7 ? 0 : 2,
           }}
           className="mt-32"
         >
@@ -197,14 +217,14 @@ export default function BodyComp() {
         </p>
         <motion.div
           initial={{ y: 100, opacity: 0 }}
-          animate={isVisible8 ? { y: -90, opacity: 1 } : {}}
+          animate={isVisible8 ? { y: -50, opacity: 1 } : {}}
           exit={{ opacity: 0 }}
           transition={{
             duration: 0.8,
             ease: "easeOut",
-            delay: isVisible8 ? 0 : 40,
+            delay: isVisible8 ? 0 : 5,
           }}
-          className="mt-32"
+          className="mt-20"
         >
           <BoyBody />
         </motion.div>
