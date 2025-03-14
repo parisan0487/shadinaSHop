@@ -1,6 +1,6 @@
 const LoadingSpinner = () => {
   return (
-    <svg className="pl w-24 h-24 ml-[35rem] mt-32" viewBox="0 0 240 240">
+    <svg className="pl w-24 h-24 mt-32" viewBox="0 0 240 240">
       <circle
         className="pl__ring pl__ring--a animate-ringA"
         cx="120"
