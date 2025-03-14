@@ -10,7 +10,7 @@ import Offer from "@/components/slider/offer";
 import New from "../../slider/new";
 import GirlBody from "../../slider/girlBody";
 import Best from "../../slider/best";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 export default function BodyComp() {
   const [isVisible1, setIsVisible1] = useState(false);
@@ -21,6 +21,10 @@ export default function BodyComp() {
   const sectionRef2 = useRef(null);
   const sectionRef3 = useRef(null);
   const sectionRef4 = useRef(null);
+  const isVisible5 = useInView(sectionRef1, { once: false, amount: 0.5 });
+  const isVisible6 = useInView(sectionRef2, { once: false, amount: 0.5 });
+  const isVisible7 = useInView(sectionRef3, { once: false, amount: 0.5 });
+  const isVisible8 = useInView(sectionRef4, { once: false, amount: 0.5 });
 
   useEffect(() => {
     const observer1 = new IntersectionObserver(
@@ -119,7 +123,19 @@ export default function BodyComp() {
         >
           جدیدترین محصولات
         </p>
-        <New />
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={isVisible5 ? { y: -90, opacity: 1 } : {}}
+          exit={{ opacity: 0 }}
+          transition={{
+            duration: 0.8,
+            ease: "easeOut",
+            delay: isVisible5 ? 0 : 0.7,
+          }}
+          className="mt-32"
+        >
+          <New />
+        </motion.div>
       </div>
 
       <div className="mt-32">
@@ -131,7 +147,19 @@ export default function BodyComp() {
         >
           پرفروش ترین ها
         </p>
-        <Best />
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={isVisible6 ? { y: -90, opacity: 1 } : {}}
+          exit={{ opacity: 0 }}
+          transition={{
+            duration: 0.8,
+            ease: "easeOut",
+            delay: isVisible6 ? 0 : 0.7,
+          }}
+          className="mt-32"
+        >
+          <Best />
+        </motion.div>
       </div>
 
       <div className="mt-32">
@@ -143,7 +171,19 @@ export default function BodyComp() {
         >
           دخترانه
         </p>
-        <GirlBody />
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={isVisible7 ? { y: -90, opacity: 1 } : {}}
+          exit={{ opacity: 0 }}
+          transition={{
+            duration: 0.8,
+            ease: "easeOut",
+            delay: isVisible7 ? 0 : 0.7,
+          }}
+          className="mt-32"
+        >
+          <GirlBody />
+        </motion.div>
       </div>
 
       <div className="mt-32">
@@ -155,7 +195,19 @@ export default function BodyComp() {
         >
           پسرانه
         </p>
-        <BoyBody />
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={isVisible8 ? { y: -90, opacity: 1 } : {}}
+          exit={{ opacity: 0 }}
+          transition={{
+            duration: 0.8,
+            ease: "easeOut",
+            delay: isVisible8 ? 0 : 40,
+          }}
+          className="mt-32"
+        >
+          <BoyBody />
+        </motion.div>
       </div>
     </div>
   );
