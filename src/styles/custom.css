@@ -1835,3 +1835,11 @@
     margin-left: -4rem;
   }
 }
+
+/* for footer */
+
+@media (max-width: 587px) {
+  #footer {
+    margin-bottom: 65px;
+  }
+}
