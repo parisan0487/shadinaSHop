@@ -390,14 +390,14 @@ export default function ProductComp() {
                       alt="Icon"
                       width={150}
                       height={150}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover image-product"
                     />
                     <Image
                       src="/img/help-pants.jpg"
                       alt="Icon"
                       width={150}
                       height={150}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover image-product"
                     />
                   </div>
                   <button

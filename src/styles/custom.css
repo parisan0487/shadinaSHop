@@ -1913,3 +1913,15 @@
     margin-top: 0px;
   }
 }
+
+@media (max-width: 458px) {
+  .image-product {
+    width: 10rem;
+  }
+}
+
+@media (max-width: 394px) {
+  .image-product {
+    width: 8rem;
+  }
+}
