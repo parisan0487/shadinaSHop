@@ -45,7 +45,7 @@ export default function Offer() {
   if (error) return <p className="text-center text-red-500">{error}</p>;
 
   return (
-    <div>
+    <>
       {loading ? (
         <div>
           <p className="text-center text-gray-500">در حال دریافت محصولات</p>
@@ -134,6 +134,6 @@ export default function Offer() {
           ))}
         </Swiper>
       )}
-    </div>
+    </>
   );
 }
