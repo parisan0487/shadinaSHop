@@ -130,7 +130,7 @@ export default function BodyComp() {
           transition={{
             duration: 0.8,
             ease: "easeOut",
-            delay: isVisible5 ? 0 : 0.7,
+            delay: isVisible5 ? 0 : 0.9,
           }}
           className="mt-32"
         >
@@ -154,7 +154,7 @@ export default function BodyComp() {
           transition={{
             duration: 0.8,
             ease: "easeOut",
-            delay: isVisible6 ? 0 : 0.7,
+            delay: isVisible6 ? 0 : 0.9,
           }}
           className="mt-32"
         >
@@ -178,7 +178,7 @@ export default function BodyComp() {
           transition={{
             duration: 0.8,
             ease: "easeOut",
-            delay: isVisible7 ? 0 : 0.7,
+            delay: isVisible7 ? 0 : 0.9,
           }}
           className="mt-32"
         >
