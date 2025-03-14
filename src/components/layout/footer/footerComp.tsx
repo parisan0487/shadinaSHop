@@ -16,7 +16,10 @@ const fadeInFromLeft = {
 export default function FooterComp() {
   return (
     <div>
-      <div className="relative w-full h-auto p-10 bg-purple-300 overflow-hidden font-gandom">
+      <div
+        className="relative w-full h-auto p-10 bg-purple-300 overflow-hidden font-gandom"
+        id="footer"
+      >
         {/* افکت‌های بک‌گراند */}
         <div className="absolute top-[-150px] left-[-200px] w-[500px] h-[500px] bg-gradient-to-br from-[#f3e8ff] via-[#f7d1ff] to-[#f8f9ff] rounded-full opacity-40 z-0"></div>
         <div className="absolute bottom-[-150px] right-[-200px] w-[500px] h-[500px] bg-gradient-to-br from-[#f3e8ff] via-[#f7d1ff] to-[#f8f9ff] rounded-full opacity-40 z-0"></div>
