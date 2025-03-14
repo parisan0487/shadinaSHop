@@ -148,17 +148,17 @@ export default function BodyComp() {
         </motion.div>
       </div>
 
-      {/* <div>
+      <div>
         <Image
-          src="/img/ball.png"
+          src="/img/ball2.png"
           alt="Shopping"
           width={100}
           height={100}
-          className="relative smooth-entry opacity-90 ml-[71rem] mb-[-9rem] cursor-pointer transition-all duration-200 transform hover:scale-110"
+          className="relative smooth-entry opacity-90 ml-[71rem] mb-[-3rem] cursor-pointer transition-all duration-200 transform hover:scale-110"
         />
-      </div> */}
+      </div>
 
-      <div className="mt-32">
+      <div>
         <p
           ref={sectionRef2}
           className={`latest-products text-center mb-8 font-gandom text-4xl font-extrabold bg-clip-text text-purple-700 relative ${
@@ -182,7 +182,17 @@ export default function BodyComp() {
         </motion.div>
       </div>
 
-      <div className="mt-32">
+      <div>
+        <Image
+          src="/img/ball3.png"
+          alt="Shopping"
+          width={100}
+          height={100}
+          className="relative smooth-entry opacity-90 mr-52 mb-[-3rem] cursor-pointer transition-all duration-200 transform hover:scale-110"
+        />
+      </div>
+
+      <div>
         <p
           ref={sectionRef3}
           className={`latest-products text-center mb-8 font-gandom text-4xl font-extrabold bg-clip-text text-purple-700 relative ${
@@ -206,7 +216,17 @@ export default function BodyComp() {
         </motion.div>
       </div>
 
-      <div className="mt-32">
+      <div>
+        <Image
+          src="/img/ball4.png"
+          alt="Shopping"
+          width={100}
+          height={100}
+          className="relative smooth-entry opacity-90 ml-[71rem] mb-[-3rem] cursor-pointer transition-all duration-200 transform hover:scale-110"
+        />
+      </div>
+
+      <div>
         <p
           ref={sectionRef4}
           className={`latest-products text-center mb-8 font-gandom text-4xl font-extrabold bg-clip-text text-purple-700 relative ${
