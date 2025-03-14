@@ -10,7 +10,7 @@ import { HeartIcon } from "@heroicons/react/24/outline";
 import { Autoplay } from "swiper/modules";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Loading from "@/app/loading";
+import LoadingSpinner from "./loadingSpinner/loadingSpinner";
 
 interface Product {
   id: number;
@@ -47,7 +47,7 @@ export default function BoyBody() {
       {loading ? (
         <div>
           <p className="text-center text-gray-500">در حال دریافت محصولات</p>
-          <Loading />
+          <LoadingSpinner />
         </div>
       ) : (
         <Swiper

@@ -206,7 +206,7 @@ export default function BodyComp() {
         </motion.div>
       </div>
 
-      <div>
+      <div className="mb-[-5rem]">
         <p
           ref={sectionRef4}
           className={`latest-products text-center mb-8 font-gandom text-4xl font-extrabold bg-clip-text text-purple-700 relative ${
