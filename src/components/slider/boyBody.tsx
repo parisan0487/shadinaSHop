@@ -10,6 +10,7 @@ import { HeartIcon } from "@heroicons/react/24/outline";
 import { Autoplay } from "swiper/modules";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Loading from "@/app/loading";
 
 interface Product {
   id: number;
@@ -44,7 +45,10 @@ export default function BoyBody() {
   return (
     <div className="max-w-[80rem] h-[25rem] mx-auto mb-24 p-8 rounded-2xl bg-gray-100 shadow-[inset_8px_8px_16px_#bebebe,inset_-8px_-8px_16px_#ffffff,8px_8px_16px_rgba(0,0,0,0.1),-8px_-8px_16px_rgba(255,255,255,0.7)] relative overflow-hidden">
       {loading ? (
-        <p className="text-center text-gray-500">در حال دریافت محصولات</p>
+        <div>
+          <p className="text-center text-gray-500">در حال دریافت محصولات</p>
+          <Loading />
+        </div>
       ) : (
         <Swiper
           modules={[Autoplay]}
