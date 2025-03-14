@@ -9,6 +9,7 @@ import NavHead from "../layout/heading/navHead";
 import Stepper from "../slider/stepper";
 import Loading from "@/app/loading";
 import Link from "next/link";
+import FooterComp from "../layout/footer/footerComp";
 
 interface Product {
   _id: string;
@@ -145,8 +146,11 @@ export default function BasketComp() {
         <NavHead bgColor="bg-gradient-to-br from-[#fefeff] via-[#f7d1ff] to-[#f8f9ff] backdrop-blur-[10px]" />
         <div className="h-8"></div>
         <Stepper currentStep={1} />
-        <div className="flex">
-          <div className="w-1/3 bg-white p-6 rounded-lg shadow-lg h-96 text-end">
+        <div className="flex" id="topDivPay">
+          <div
+            className="w-1/3 bg-white p-6 rounded-lg shadow-lg h-[28rem] text-end divPay"
+            id="payment-details"
+          >
             <h3 className="text-2xl font-bold  mb-4">جزئیات پرداخت</h3>
 
             <div className="mb-6">
@@ -172,7 +176,6 @@ export default function BasketComp() {
                 <input
                   id="discountCode"
                   type="text"
-                  placeholder="کد تخفیف خود را وارد کنید"
                   className="w-full p-2 border border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
                 />
               </div>
@@ -188,19 +191,19 @@ export default function BasketComp() {
 
             <Link href="/basket/chckout">
               <div className="text-center">
-                <button className="bg-purple-600 text-white px-6 py-3 rounded-full shadow-md hover:bg-purple-700 w-full">
+                <button className="bg-purple-600 text-white px-6 py-3 rounded-full shadow-md hover:bg-purple-700 w-full checkout-button">
                   ادامه مراحل خرید
                 </button>
               </div>
             </Link>
           </div>
 
-          <div className="w-2/3 pl-8">
-            <div className="space-y-8">
+          <div className="w-2/3 pl-8" id="product-details">
+            <div className="space-y-8 mb-[50px]">
               {cart.items.map((item: CartItem) => (
                 <div
                   key={`${item.product?._id}-${item.variant?.color}-${item.variant?.size}`}
-                  className="flex justify-between items-center bg-white rounded-lg shadow-md p-4 transition-transform transform hover:scale-105"
+                  className="flex justify-between items-center bg-white rounded-lg shadow-md p-4 transition-transform transform hover:scale-105 product-detail"
                 >
                   <div className="flex flex-col items-center">
                     <div className="flex gap-2">
@@ -268,6 +271,7 @@ export default function BasketComp() {
           </div>
         </div>
       </div>
+      <FooterComp />
     </>
   );
 }
