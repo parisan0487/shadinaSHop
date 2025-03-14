@@ -18,8 +18,8 @@ const images = [
 export default function SimpleImageSwiper() {
   return (
     <motion.div
-      initial={{ opacity: 0, x: 100 }} // شروع از سمت راست
-      animate={{ opacity: 1, x: 0 }} // ورود به موقعیت اصلی
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1.2, ease: "easeOut" }}
       className="w-full pl-28 -z-10"
       id="clothesSlider"

@@ -1027,6 +1027,9 @@
   #circleButtom {
     bottom: -307px;
   }
+  #icon {
+    margin-bottom: 65px;
+  }
 }
 
 @media (max-width: 473px) {

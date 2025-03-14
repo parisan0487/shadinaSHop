@@ -101,14 +101,6 @@ export default function BodyComp() {
           پیشنهاد ویژه
         </p>
 
-        {/* <div className="loader">
-          <StarIcon className="loader-svg" />
-        </div> */}
-
-        {/* <div className="loader lod2" id="starButton">
-          <StarIcon className="loader-svg" />
-        </div> */}
-
         <div className="flex gap-8 mt-[2rem] ml-6" id="offer">
           <Offer />
         </div>

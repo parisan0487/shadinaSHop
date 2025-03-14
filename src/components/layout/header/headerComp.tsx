@@ -32,8 +32,8 @@ const HeaderComp = () => {
           className="w-1/2 pr-10 text-right"
           id="text"
           initial={{ opacity: 0, x: -100, zIndex: -1 }}
-          animate={{ opacity: 1, x: 0, zIndex: 50 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          animate={{ opacity: 1, x: 0, zIndex: 45 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <motion.h1
             className="text-4xl font-extrabold text-purple-800 opacity-90"
