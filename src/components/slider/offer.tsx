@@ -52,18 +52,19 @@ export default function Offer() {
       breakpoints={{
         368: { slidesPerView: 2, spaceBetween: 270 },
         375: { slidesPerView: 1, spaceBetween: 110 },
-        412: { slidesPerView: 2, spaceBetween: 230 },
-        // 490: { slidesPerView: 2, spaceBetween: 160 },
-        // 530: { slidesPerView: 2, spaceBetween: 115 },
+        397: { slidesPerView: 2, spaceBetween: 205 },
+        470: { slidesPerView: 2, spaceBetween: 170 },
+        525: { slidesPerView: 2, spaceBetween: 100 },
         575: { slidesPerView: 2, spaceBetween: 55 },
         650: { slidesPerView: 2, spaceBetween: 5 },
         700: { slidesPerView: 3, spaceBetween: 200 },
         820: { slidesPerView: 3, spaceBetween: 60 },
         890: { slidesPerView: 3, spaceBetween: 20 },
-        940: { slidesPerView: 3, spaceBetween: -100 },
-        1060: { slidesPerView: 3, spaceBetween: 10 },
-        1230: { slidesPerView: 3, spaceBetween: 90 },
-        1310: { slidesPerView: 3, spaceBetween: 30 },
+        940: { slidesPerView: 4, spaceBetween: 180 },
+        1060: { slidesPerView: 4, spaceBetween: 90 },
+        1230: { slidesPerView: 4, spaceBetween: 80 },
+        1310: { slidesPerView: 4, spaceBetween: 70 },
+        // 1310: { slidesPerView: 3, spaceBetween: 30 },
       }}
       className="w-[90%] overflow-hidden"
       id="swiper-offer"
