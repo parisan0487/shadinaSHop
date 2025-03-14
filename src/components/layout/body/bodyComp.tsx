@@ -10,6 +10,7 @@ import Offer from "@/components/slider/offer";
 import New from "../../slider/new";
 import GirlBody from "../../slider/girlBody";
 import Best from "../../slider/best";
+import { motion } from "framer-motion";
 
 export default function BodyComp() {
   const [isVisible1, setIsVisible1] = useState(false);
@@ -85,7 +86,10 @@ export default function BodyComp() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
-      <div
+      <motion.div
+        initial={{ x: -200, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
         className="max-w-[63rem] h-[32rem] mx-auto mb-8 p-8 rounded-2xl bg-gray-100 shadow-[inset_8px_8px_16px_#bebebe,inset_-8px_-8px_16px_#ffffff,8px_8px_16px_rgba(0,0,0,0.1),-8px_-8px_16px_rgba(255,255,255,0.7)] relative overflow-hidden"
         id="hightDad"
       >
@@ -104,7 +108,7 @@ export default function BodyComp() {
         <div className="flex gap-8 mt-[2rem] ml-6" id="offer">
           <Offer />
         </div>
-      </div>
+      </motion.div>
 
       <div className="mt-32">
         <p
