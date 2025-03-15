@@ -11,15 +11,20 @@ interface NavHeadProps {
 
 export default function NavHead({ bgColor = "bg-white/30" }: NavHeadProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [delayedOpen, setDelayedOpen] = useState(false);
 
   const handleMenu = () => {
+    setIsOpen(true);
     setTimeout(() => {
-      setIsOpen(true);
-    }, 1000);
+      setDelayedOpen(true);
+    }, 10);
   };
 
   const handleClose = () => {
-    setIsOpen(false);
+    setDelayedOpen(false);
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 300);
   };
 
   useEffect(() => {
@@ -150,8 +155,17 @@ export default function NavHead({ bgColor = "bg-white/30" }: NavHeadProps) {
         </Link>
       </nav>
       {isOpen && (
-        <div className="fixed inset-0 z-50 bg-black/30 text-end flex justify-end">
-          <div className="w-80 bg-white/50 shadow-lg rounded-lg p-5 fixed right-0 top-0 h-full backdrop-blur-lg flex flex-col">
+        <div
+          className={`fixed inset-0 z-50 bg-black/30 text-end flex justify-end transition-opacity duration-300 ${
+            delayedOpen ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <div
+            className={`w-80 bg-white/50 shadow-lg rounded-lg p-5 fixed right-0 top-0 h-full backdrop-blur-lg flex flex-col
+      transition-transform duration-300 transform ${
+        delayedOpen ? "translate-x-0" : "translate-x-full"
+      }`}
+          >
             <div className="flex items-center justify-between mb-3">
               <button
                 className="text-red-600 text-3xl hover:scale-110 transition-all duration-300 mt-[15px]"
