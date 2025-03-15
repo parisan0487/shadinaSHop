@@ -1,3 +1,4 @@
+import FooterComp from "@/components/layout/footer/footerComp";
 import NavHead from "@/components/layout/heading/navHead";
 import Stepper from "@/components/slider/stepper";
 import Link from "next/link";
@@ -64,6 +65,7 @@ const Checkout = () => {
           </div>
         </div>
       </div>
+      <FooterComp />
     </>
   );
 };

@@ -2193,3 +2193,21 @@
     margin-left: -84px;
   }
 }
+
+@media (max-width: 445px) {
+  #lovely-details {
+    margin-left: -95px;
+  }
+}
+
+@media (max-width: 408px) {
+  #lovely-details {
+    margin-left: -106px;
+  }
+}
+
+@media (max-width: 380px) {
+  #lovely-details {
+    margin-left: -110px;
+  }
+}
