@@ -389,9 +389,7 @@ export default function AllProduct() {
           <div
             id="filter-color"
             className={`bg-white shadow-lg rounded-lg mt-3 transition-all duration-300 overflow-hidden w-[45rem] ${
-              isOpen
-                ? "max-h-[20rem] opacity-100 py-4"
-                : "max-h-0 opacity-0 py-0"
+              isOpen ? "h-[20rem] opacity-100 py-4" : "max-h-0 opacity-0 py-0"
             }`}
           >
             <div className="flex flex-col gap-4 px-4" dir="rtl">

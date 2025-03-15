@@ -2524,7 +2524,7 @@
 @media (max-width: 460px) {
   #filter-color {
     width: 22rem;
-    max-height: 100rem;
+    height: 22rem;
     margin-left: 5rem;
   }
   #show-div2 {
