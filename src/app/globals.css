@@ -36,3 +36,7 @@ body {
 #swiper-new {
   overflow: visible !important;
 }
+
+:root {
+  color-scheme: light !important;
+}
