@@ -4,7 +4,7 @@ import NavHead from "@/components/layout/heading/navHead";
 export default function ContactUs() {
   return (
     <>
-      <div className="p-8 bg-gradient-to-r from-purple-200 to-pink-100  font-gandom">
+      <div className="p-8 bg-gradient-to-r from-purple-200 to-pink-100  font-gandom overflow-hidden">
         <NavHead bgColor="bg-gradient-to-br from-[#fefeff] via-[#f7d1ff] to-[#f8f9ff] backdrop-blur-[10px]" />
       </div>
       <div className="bg-gray-100 text-gray-900 min-h-screen p-6 flex flex-col items-center font-gandom">

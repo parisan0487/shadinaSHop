@@ -68,6 +68,7 @@ export default function AllProduct() {
   const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 15;
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     axios
@@ -160,9 +161,9 @@ export default function AllProduct() {
         <NavHead bgColor="bg-gradient-to-br from-[#fefeff] via-[#f7d1ff] to-[#f8f9ff] backdrop-blur-[10px]" />
       </div>
 
-      <div className="flex justify-between p-8 mt-10">
+      <div className="flex justify-between p-8 mt-10" id="div-allPro">
         {/* محصولات */}
-        <div className="w-3/4">
+        <div className="w-3/4" id="pro">
           {rows.map((row, rowIndex) => (
             <div key={rowIndex} className="flex justify-center gap-8 mb-8">
               {row.map((item) => (
@@ -221,7 +222,10 @@ export default function AllProduct() {
         </div>
 
         {/* فیلترها */}
-        <div className="bg-white p-6 rounded-lg shadow-lg w-1/4 h-[43rem]">
+        <div
+          className="bg-white p-6 rounded-lg shadow-lg w-1/4 h-[43rem]"
+          id="filter-menu"
+        >
           <h2 className="text-xl font-bold mb-4 text-center">فیلترها</h2>
 
           <div className="mb-6">
@@ -237,7 +241,7 @@ export default function AllProduct() {
                       : "border-2 border-gray-300"
                   }`}
                   style={{
-                    backgroundColor: colorMap[color] || color, // استفاده از colorMap
+                    backgroundColor: colorMap[color] || color,
                   }}
                 />
               ))}
@@ -275,6 +279,84 @@ export default function AllProduct() {
           >
             پاک کردن فیلترها
           </button>
+        </div>
+
+        {/*  */}
+        {/* فیلترها */}
+        <div className="w-full flex-col items-center hidden" id="filter-top">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition duration-300 font-gandom"
+            id="filter-button"
+          >
+            {isOpen ? "بستن فیلترها" : "نمایش فیلترها"}
+          </button>
+
+          <div
+            id="filter-top"
+            className={`bg-white shadow-lg rounded-lg mt-3 transition-all duration-300 overflow-hidden w-[45rem] ${
+              isOpen
+                ? "max-h-[20rem] opacity-100 py-4"
+                : "max-h-0 opacity-0 py-0"
+            }`}
+          >
+            <div className="flex flex-col gap-4 px-4" dir="rtl">
+              {/* فیلتر رنگ‌ها */}
+              <div className="flex flex-col items-start">
+                <h3 className="text-lg font-semibold mb-2">رنگ‌ها:</h3>
+                <div className="flex flex-wrap gap-2">
+                  {availableColors.map((color) => (
+                    <button
+                      key={color}
+                      onClick={() => handleColorChange(color)}
+                      className={`w-8 h-8 rounded-full transition duration-300 ${
+                        selectedColors.includes(color)
+                          ? "border-4 border-gray-400"
+                          : "border-2 border-gray-300"
+                      }`}
+                      style={{ backgroundColor: colorMap[color] || color }}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* فیلتر سایزها */}
+              <div className="flex flex-col items-start">
+                <h3 className="text-lg font-semibold mb-2">سایزها:</h3>
+                <div className="flex flex-wrap gap-2">
+                  {availableSizes.map((size) => (
+                    <button
+                      key={size}
+                      onClick={() => handleSizeChange(size)}
+                      className={`px-3 py-1 rounded-md text-sm font-semibold transition duration-300 ${
+                        selectedSizes.includes(size)
+                          ? "bg-purple-600 text-white"
+                          : "bg-gray-200 text-gray-700 hover:bg-purple-200"
+                      }`}
+                    >
+                      {size}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* دکمه‌های اعمال و پاک کردن فیلتر */}
+              <div className="flex gap-4">
+                <button
+                  onClick={applyFilters}
+                  className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition duration-300"
+                >
+                  اعمال
+                </button>
+                <button
+                  onClick={clearFilters}
+                  className="bg-gray-300 text-black px-4 py-2 rounded-lg hover:bg-gray-400 transition duration-300"
+                >
+                  پاک کردن
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <FooterComp />
