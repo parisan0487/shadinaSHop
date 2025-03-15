@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import Loading from "@/app/loading";
 import Link from "next/link";
 import NavHead from "../layout/heading/navHead";
+import FooterComp from "../layout/footer/footerComp";
 
 interface Product {
   _id: string;
@@ -77,6 +78,7 @@ export default function LovelyComp() {
                 <motion.div
                   key={product._id}
                   className="flex justify-between items-center bg-white rounded-lg shadow-md p-4 transition-transform transform hover:scale-105"
+                  id="lovely-details"
                 >
                   <button
                     onClick={() => removeWishlistMutation.mutate(product._id)}
@@ -116,6 +118,7 @@ export default function LovelyComp() {
           </div>
         </div>
       </div>
+      <FooterComp />
     </>
   );
 }

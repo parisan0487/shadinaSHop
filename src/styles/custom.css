@@ -991,7 +991,7 @@
   }
   #icon {
     width: 27rem;
-    margin-left: -26px;
+    margin-left: -23px;
   }
 }
 
@@ -2106,5 +2106,90 @@
   }
   #payment-details {
     margin-left: -15px;
+  }
+}
+
+/* for lovely */
+
+@media (max-width: 761px) {
+  #lovely-details {
+    width: 35rem;
+    margin-left: -75px;
+  }
+}
+
+@media (max-width: 717px) {
+  #lovely-details {
+    margin-left: -100px;
+  }
+}
+
+@media (max-width: 677px) {
+  #lovely-details {
+    margin-left: -110px;
+  }
+}
+
+@media (max-width: 641px) {
+  #lovely-details {
+    margin-left: -117px;
+  }
+}
+
+@media (max-width: 631px) {
+  #lovely-details {
+    width: 30rem;
+    margin-left: -84px;
+  }
+}
+
+@media (max-width: 591px) {
+  #lovely-details {
+    width: 30rem;
+    margin-left: -97px;
+  }
+}
+
+@media (max-width: 571px) {
+  #lovely-details {
+    margin-left: -103px;
+  }
+}
+
+@media (max-width: 557px) {
+  #lovely-details {
+    width: 25rem;
+    margin-left: -71px;
+  }
+}
+
+@media (max-width: 529px) {
+  #lovely-details {
+    margin-left: -80px;
+  }
+}
+
+@media (max-width: 511px) {
+  #lovely-details {
+    margin-left: -85px;
+  }
+}
+
+@media (max-width: 500px) {
+  #lovely-details {
+    margin-left: -88px;
+  }
+}
+
+@media (max-width: 483px) {
+  #lovely-details {
+    width: 23rem;
+    margin-left: -78px;
+  }
+}
+
+@media (max-width: 468px) {
+  #lovely-details {
+    margin-left: -84px;
   }
 }
