@@ -155,6 +155,24 @@ export default function AllProduct() {
     return rowChunks;
   }, [currentProducts]);
 
+  //
+
+  const itemsPerPage = 8;
+
+  const lastItemIndex = currentPage * itemsPerPage;
+  const firstItemIndex = lastItemIndex - itemsPerPage;
+  const currentItems = filteredProducts.slice(firstItemIndex, lastItemIndex);
+
+  const totalPageCount = Math.ceil(filteredProducts.length / itemsPerPage);
+
+  const itemRows = useMemo(() => {
+    const groupedRows = [];
+    for (let i = 0; i < currentItems.length; i += 2) {
+      groupedRows.push(currentItems.slice(i, i + 2));
+    }
+    return groupedRows;
+  }, [currentItems]);
+
   return (
     <div className="bg-gray-100 font-gandom overflow-hidden">
       <div className="p-8">
@@ -165,7 +183,76 @@ export default function AllProduct() {
         {/* محصولات */}
         <div className="w-3/4" id="pro">
           {rows.map((row, rowIndex) => (
-            <div key={rowIndex} className="flex justify-center gap-8 mb-8">
+            <div
+              key={rowIndex}
+              className="flex justify-center gap-8 mb-8"
+              id="show-div1"
+            >
+              {row.map((item) => (
+                <Link key={item._id} href={`/products/${item.slug}`}>
+                  <div className="rounded-[12px] w-[14rem] h-[21rem] bg-gradient-to-br from-[#f0f0f0] to-[#cacaca] shadow-[7px_7px_14px_#5a5a5a,-7px_-7px_14px_#ffffff] flex flex-col relative group">
+                    {item.images.length > 0 ? (
+                      <Image
+                        src={item.images[0]}
+                        alt={item.name}
+                        width={150}
+                        height={150}
+                        className="rounded-md w-72 h-52 transition-all duration-300 group-hover:scale-105"
+                      />
+                    ) : (
+                      <div className="w-72 h-52 bg-gray-200 flex items-center justify-center rounded-md">
+                        تصویر موجود نیست
+                      </div>
+                    )}
+                    <HeartIcon className="absolute top-2 right-2 w-8 h-8 text-gray-400 opacity-0 group-hover:opacity-100 group-hover:text-red-400 transition-all duration-300" />
+                    <p className="mt-4 text-gray-700 font-gandom text-lg font-bold text-center">
+                      {item.name}
+                    </p>
+                    <p className="mt-1 font-gandom text-red-400 text-center">
+                      {item.description}
+                    </p>
+                    <div className="relative flex items-center justify-end pr-4 mt-5">
+                      <p className="font-gandom text-black font-bold" dir="rtl">
+                        {`${toPersianDigits(item.price)} تومان`}
+                      </p>
+                      <span className="ml-2 inline-block w-4 h-4 rounded bg-purple-900 transition-all duration-600 group">
+                        <CheckIcon className="w-full h-full text-white stroke-2 transition-all duration-600 group-hover:stroke-purple-500" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          ))}
+          {/* صفحه‌بندی */}
+          <div
+            className="flex justify-center mt-8 gap-4"
+            dir="rtl"
+            id="show-div1"
+          >
+            {Array.from({ length: totalPages }, (_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentPage(index + 1)}
+                className={`px-4 py-2 rounded-md transition duration-300 ${
+                  currentPage === index + 1
+                    ? "bg-purple-600 text-white"
+                    : "bg-gray-300 text-black hover:bg-purple-500"
+                }`}
+              >
+                {index + 1}
+              </button>
+            ))}
+          </div>
+
+          {/*  */}
+
+          {itemRows.map((row, rowIndex) => (
+            <div
+              key={rowIndex}
+              className="justify-center gap-8 mb-8 hidden"
+              id="show-div2"
+            >
               {row.map((item) => (
                 <Link key={item._id} href={`/products/${item.slug}`}>
                   <div className="rounded-[12px] w-[14rem] h-[21rem] bg-gradient-to-br from-[#f0f0f0] to-[#cacaca] shadow-[7px_7px_14px_#5a5a5a,-7px_-7px_14px_#ffffff] flex flex-col relative group">
@@ -204,8 +291,12 @@ export default function AllProduct() {
           ))}
 
           {/* صفحه‌بندی */}
-          <div className="flex justify-center mt-8 gap-4" dir="rtl">
-            {Array.from({ length: totalPages }, (_, index) => (
+          <div
+            className="justify-center mt-8 gap-4 hidden"
+            dir="rtl"
+            id="show-div2"
+          >
+            {Array.from({ length: totalPageCount }, (_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentPage(index + 1)}
@@ -293,7 +384,7 @@ export default function AllProduct() {
           </button>
 
           <div
-            id="filter-top"
+            id="filter-color"
             className={`bg-white shadow-lg rounded-lg mt-3 transition-all duration-300 overflow-hidden w-[45rem] ${
               isOpen
                 ? "max-h-[20rem] opacity-100 py-4"
