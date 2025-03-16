@@ -105,7 +105,7 @@ export default function ProfileComp() {
             </div>
             <div className="w-24 h-24 bg-gray-300 rounded-full flex justify-center items-center text-3xl font-bold text-gray-700">
               <Image
-                src={"/img/bag.png"}
+                src={"/img/user2.png"}
                 alt={"userImage"}
                 width={80}
                 height={60}
