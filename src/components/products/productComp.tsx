@@ -85,7 +85,7 @@ export default function ProductComp() {
         if (typeof params.id === "string") {
           const [id, slug] = params.id.split("-");
           console.log("Fetching product with id:", id, "and slug:", slug);
-          const url = `/api/products/${params.id}`;
+          const url = `https://shadback-production.up.railway.app/api/products/${params.id}`;
           const response = await axios.get(url);
           if (response.status === 200) {
             setProduct(response.data);
@@ -144,7 +144,7 @@ export default function ProductComp() {
       }
 
       const response = await axios.post(
-        "/api/cart/add",
+        "https://shadback-production.up.railway.app/api/cart/add",
         {
           productId: product._id,
           quantity: 1,
@@ -177,7 +177,7 @@ export default function ProductComp() {
       }
 
       const response = await axios.post(
-        "/api/wishlist/add",
+        "https://shadback-production.up.railway.app/api/wishlist/add",
         { productId: product._id },
         { headers: { Authorization: `Bearer ${token}` } }
       );

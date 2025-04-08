@@ -7,9 +7,12 @@ const fetchCart = async () => {
     throw new Error("No token found");
   }
 
-  const { data } = await axios.get("/api/cart", {
-    headers: { Authorization: `Bearer ${token}` },
-  });
+  const { data } = await axios.get(
+    "https://shadback-production.up.railway.app/api/cart",
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
 
   console.log(data);
   return data;

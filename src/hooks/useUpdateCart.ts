@@ -8,7 +8,10 @@ interface UpdateCartParams {
 
 const updateCartRequest = async ({ productId, action }: UpdateCartParams) => {
   const token = localStorage.getItem("token");
-  const url = action === "add" ? "/api/cart/add" : "/api/cart/remove";
+  const url =
+    action === "add"
+      ? "https://shadback-production.up.railway.app/api/cart/add"
+      : "https://shadback-production.up.railway.app/api/cart/remove";
   const method = "POST";
 
   const { data } = await axios({

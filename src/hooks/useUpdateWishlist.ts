@@ -14,7 +14,11 @@ const updateWishlist = async ({ productId }: UpdateCartParams) => {
     },
   };
 
-  const { data } = await axios.post("/api/wishlist/add", { productId }, config);
+  const { data } = await axios.post(
+    "https://shadback-production.up.railway.app/api/wishlist/add",
+    { productId },
+    config
+  );
   return data;
 };
 

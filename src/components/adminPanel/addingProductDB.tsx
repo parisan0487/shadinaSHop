@@ -472,7 +472,7 @@ const AddProductsToDB = () => {
       }));
 
       await axios.post(
-        "/api/products/add-multiple",
+        "https://shadback-production.up.railway.app/api/products/add-multiple",
         { products: productsToSend },
         {
           headers: {
@@ -493,7 +493,7 @@ const AddProductsToDB = () => {
 
   const deleteAllProducts = async () => {
     try {
-      await axios.delete("/api/products/delete-all");
+      await axios.delete("https://shadback-production.up.railway.app/api/products/delete-all");
       alert("پاک شد");
     } catch (error: any) {
       console.error(

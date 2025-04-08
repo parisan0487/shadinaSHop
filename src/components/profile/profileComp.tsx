@@ -32,9 +32,12 @@ export default function ProfileComp() {
           return;
         }
 
-        const response = await axios.get<User>("/api/users/", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const response = await axios.get<User>(
+          "https://shadback-production.up.railway.app/api/users/",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
 
         setUser(response.data);
       } catch (error) {
@@ -60,7 +63,7 @@ export default function ProfileComp() {
       }
 
       const response = await axios.put(
-        "/api/users/update",
+        "https://shadback-production.up.railway.app/api/users/update",
         { name: editName, phone: editPhone },
         {
           headers: { Authorization: `Bearer ${token}` },

@@ -4,9 +4,12 @@ import axios from "axios";
 const fetchWishlist = async () => {
   const token = localStorage.getItem("token");
   if (!token) return { items: [] };
-  const { data } = await axios.get("/api/wishlist", {
-    headers: { Authorization: `Bearer ${token}` },
-  });
+  const { data } = await axios.get(
+    "https://shadback-production.up.railway.app/api/wishlist",
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
   return data;
 };
 

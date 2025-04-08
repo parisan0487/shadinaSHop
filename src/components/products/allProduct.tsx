@@ -72,7 +72,7 @@ export default function AllProduct() {
 
   useEffect(() => {
     axios
-      .get<Product[]>(`/api/products`)
+      .get<Product[]>(`https://shadback-production.up.railway.app/api/products`)
       .then((response) => {
         setProduct(response.data);
         setFilteredProducts(response.data);

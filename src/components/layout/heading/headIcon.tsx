@@ -82,7 +82,7 @@ export default function Icons() {
 
     try {
       const response = await axios.get<Product[]>(
-        `/api/products/search?q=${value}`
+        `https://shadback-production.up.railway.app/api/products/search?q=${value}`
       );
       setSearchResults(response.data);
       setIsModalOpen(true);
