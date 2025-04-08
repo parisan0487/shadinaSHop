@@ -26,7 +26,9 @@ export default function Offer() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("/api/products/category/offer");
+        const response = await fetch(
+          "https://shadback-production.up.railway.app/api/products/category/offer"
+        );
         const data = await response.json();
         console.log("محصولات دریافت‌شده:", data);
         setProducts(data);

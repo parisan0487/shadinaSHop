@@ -29,7 +29,9 @@ export default function Best() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("/api/products/category/best");
+        const response = await fetch(
+          "https://shadback-production.up.railway.app/api/products/category/best"
+        );
         const data = await response.json();
         setProducts(data);
       } catch (error) {
