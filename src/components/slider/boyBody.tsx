@@ -29,7 +29,9 @@ export default function BoyBody() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("/api/products/category/boyBody");
+        const response = await fetch(
+          "https://shadback-production.up.railway.app/api/products/category/boyBody"
+        );
         const data = await response.json();
         setProducts(data);
       } catch (error) {
