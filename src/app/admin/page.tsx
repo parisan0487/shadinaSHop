@@ -18,9 +18,12 @@ export default function AdminPage() {
       }
 
       try {
-        const res = await fetch("http://89.42.199.11:5000/api/users/admin", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const res = await fetch(
+          "https://shadback-production.up.railway.app/api/users/admin",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
 
         const contentType = res.headers.get("content-type");
         if (!contentType || !contentType.includes("application/json")) {
